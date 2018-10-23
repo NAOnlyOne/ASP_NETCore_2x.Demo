@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BLL.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 
 namespace MVC.Controllers
 {
@@ -20,6 +21,9 @@ namespace MVC.Controllers
 
         public IActionResult Index()
         {
+            var logger = LogManager.GetLogger("Request");
+            logger.Info("请求成功");
+
             return View();
         }
 
